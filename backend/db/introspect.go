@@ -6,7 +6,7 @@ import (
 	"github.com/liki31/db-visualizer/backend/models"
 )
 
-func (c, *DBConnection) GetTables() ([]models.Table, error) {
+func (c *DBConnection) GetTables() ([]models.Table, error) {
 	query := `
 		SELECT table_name
 		FROM information_schema.tables
