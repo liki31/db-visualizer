@@ -53,10 +53,10 @@ func (c *DBConnection) GetColumns(tableName string) ([]models.Column, error) {
 	for rows.Next() {
 		var col models.Column
 		var nullable string
-		if err := rows.Scan(&col.Name, &col.DataType, &nullable, &col.IsPK); err != nil {
+		if err := rows.Scan(&col.Name, &col.DataType, &nullable, &col.IsPk); err != nil {
 			return nil, err
 		}
-		col.IsNullable = nullable == "YES"
+		col.IsNull = nullable == "YES"
 		columns = append(columns, col)
 	}
 	return columns, nil

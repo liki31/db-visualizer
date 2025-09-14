@@ -24,7 +24,7 @@ func ConnectHandler(c *gin.Context) {
 		return
 	}
 
-	conn, err := db.ConnectPostgres(req.Host, req.User, req.Password, req.Database, req.Port)
+	conn, err := db.ConnectPostgres(req.Host, req.Port, req.User, req.Password, req.Database, )
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

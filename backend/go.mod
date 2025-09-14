@@ -1,4 +1,4 @@
-module github.com/liki31/db-visualizer
+module github.com/liki31/db-visualizer/backend
 
 go 1.24.0
 
