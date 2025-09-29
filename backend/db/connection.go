@@ -15,7 +15,7 @@ type DBConnection struct {
 
 func ConnectPostgres(host string, port int, user, password, dbname string) (*DBConnection, error) {
 	fmt.Printf("Connecting to database %s at Host-%s:password-%d as user %s\n", dbname, host, port, user)
-	dsn := fmt.Sprintf("postgres://%s:%s@%s:%d/%s", user, password, host, port, dbname)
+	dsn := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable", user, password, host, port, dbname)
 	db, err := sql.Open("pgx", dsn)
 	if err != nil {
 		return nil, err
